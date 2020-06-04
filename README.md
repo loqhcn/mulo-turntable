@@ -3,11 +3,11 @@
 
 ## demo1
 
-<image alt="img" src="http://qiniu1.loqh.cn/mulo-turntable-1.png">
+<img alt="img" src="http://qiniu1.loqh.cn/mulo-turntable-1.png"/>
 
 ## demo2
 
-<image alt="img" src="http://qiniu1.loqh.cn/mulo-turntable-2.png">
+<img alt="img" src="http://qiniu1.loqh.cn/mulo-turntable-2.png"/>
 
 
 
