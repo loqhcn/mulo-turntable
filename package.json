@@ -1,6 +1,6 @@
 {
   "name": "mulo-turntable",
-  "version": "0.0.1",
+  "version": "2.0.2",
   "description": "",
   "main": "lib/index.umd.js",
   "scripts": {
@@ -12,9 +12,11 @@
     "lib"
   ],
   "keywords": [
-    "图片验证码",
-    "imgcode",
-    "验证码"
+    "转盘",
+    "turntalbe",
+    "幸运抽奖",
+    "lottery",
+    "活动"
   ],
   "author": "",
   "license": "ISC",
@@ -29,6 +31,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/loqhcn/mulo-imgcode"
+    "url": "git+https://github.com/loqhcn/mulo-turntable"
   }
 }

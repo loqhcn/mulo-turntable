@@ -24,6 +24,7 @@ npm i mulo-imgcode -S
 
 ```javascript
 import MuloTurntable from 'mulo-turntalbe'
+import 'mulo-turntalbe/lib/index.css'
 Vue.use(MuloTurntable)
 // or
 vue.component(MuloTurntable.name,MuloTurntable);
@@ -111,6 +112,72 @@ export default {
 
 ## cdn使用示例
 ```html
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>测试</title>
+</head>
+
+<body>
+    <div id="app">
+        <mulo-turntable ref="turntable" :rules="rules" bgc="green" @begin="begin" @end="end" rule-size-type="identical"
+            :turns="10" :duration="5"></mulo-turntable>
+    </div>
+    <link rel="stylesheet" href="https://unpkg.com/mulo-turntable/lib/index.css">
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.11/vue.js"></script>
+    <script src="https://unpkg.com/mulo-turntable"></script>
+
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data() {
+                return {
+                    rules: [
+                        {
+                            title: "一等奖",
+                            img: "http://qiniu1.loqh.cn/xiaolian.png",
+                            ratio: 20,
+                            backgroundColor: "pink"
+                        },
+                        {
+                            title: "二等奖",
+                            img: "http://qiniu1.loqh.cn/xiaolian.png",
+                            ratio: 10,
+                            backgroundColor: "#ffc107"
+                        },
+                        {
+                            title: "三等奖",
+                            img: "http://qiniu1.loqh.cn/xiaolian.png",
+                            ratio: 70,
+                            backgroundColor: "green"
+                        }
+                    ]
+                };
+            },
+            methods: {
+                //点击开始按钮
+                begin(data) {
+                    //中奖的选项的索引
+                    let awardIndex = 1;
+                    //开始
+                    data.begin && data.begin(awardIndex);
+                },
+                //动画播放完成
+                end(data) {
+                    let { awardIndex } = data;
+
+                    alert(`恭喜获得${this.rules[awardIndex].title}`);
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
 
 ```
 

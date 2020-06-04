@@ -9,28 +9,53 @@
 
 <body>
     <div id="app">
-        <button @click="show">打开</button>
-        <mulo-imgcode ref="imgcode" @success="success" :showerr="showerr"></mulo-imgcode>
+        <mulo-turntable ref="turntable" :rules="rules" bgc="green" @begin="begin" @end="end" rule-size-type="identical"
+            :turns="10" :duration="5"></mulo-turntable>
     </div>
-    <link rel="stylesheet" href="https://unpkg.com/mulo-imgcode/lib/index.css">
+    <link rel="stylesheet" href="https://unpkg.com/mulo-turntable/lib/index.css">
     <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.11/vue.js"></script>
-    <script src="https://unpkg.com/mulo-imgcode"></script>
-    
+    <script src="https://unpkg.com/mulo-turntable"></script>
+
     <script>
         var vm = new Vue({
             el: '#app',
+            data() {
+                return {
+                    rules: [
+                        {
+                            title: "一等奖",
+                            img: "http://qiniu1.loqh.cn/xiaolian.png",
+                            ratio: 20,
+                            backgroundColor: "pink"
+                        },
+                        {
+                            title: "二等奖",
+                            img: "http://qiniu1.loqh.cn/xiaolian.png",
+                            ratio: 10,
+                            backgroundColor: "#ffc107"
+                        },
+                        {
+                            title: "三等奖",
+                            img: "http://qiniu1.loqh.cn/xiaolian.png",
+                            ratio: 70,
+                            backgroundColor: "green"
+                        }
+                    ]
+                };
+            },
             methods: {
-                //显示图片验证码 , 在需要图形验证码的时候进行这个处理
-                show() {
-                    this.$refs.imgcode.show();
+                //点击开始按钮
+                begin(data) {
+                    //中奖的选项的索引
+                    let awardIndex = 1;
+                    //开始
+                    data.begin && data.begin(awardIndex);
                 },
-                //validate successed action
-                success() {
-                    alert('验证成功');
-                },
-                //show error msg
-                showerr(msg) {
-                    alert(msg);
+                //动画播放完成
+                end(data) {
+                    let { awardIndex } = data;
+
+                    alert(`恭喜获得${this.rules[awardIndex].title}`);
                 }
             }
         })
