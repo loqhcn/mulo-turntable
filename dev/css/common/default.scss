@@ -1,0 +1,68 @@
+*,
+:after,
+:before {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box; /*-webkit-user-select: none; outline: none; -webkit-tap-highlight-color: transparent; -webkit-tap-highlight-color: transparent; */
+}
+html,
+body {
+    height: 100%;
+    background: $color-white-dark;
+    font-family: PingFangSC-Regular, Helvetica, Droid Sans, Arial, sans-serif;
+}
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+form,
+fieldset,
+input,
+textarea,
+p,
+blockquote,
+span,
+input,
+p,
+a {
+    margin: 0;
+    padding: 0;
+}
+img {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    vertical-align: middle;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+span {
+    font-weight: normal;
+}
+a {
+    text-decoration: none;
+    outline: none;
+}
+ul {
+    list-style: none;
+}
+li {
+    list-style: none;
+}
+em {
+    font-style: normal;
+}

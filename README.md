@@ -16,14 +16,14 @@
 
 ```cmd
 
-npm i mulo-imgcode -S
+npm i mulo-turntable -S
 
 ```
 
 > 引入
 
 ```javascript
-import MuloTurntable from 'mulo-turntalbe'
+import MuloTurntable from 'mulo-turntable'
 import 'mulo-turntalbe/lib/index.css'
 Vue.use(MuloTurntable)
 // or
